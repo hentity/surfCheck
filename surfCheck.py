@@ -11,7 +11,7 @@ longitude = 153.552444 #longitude of beach
 latitude = -28.515525 #latitude of beach
 
 def main():
-    #wind, data = API_coordinates()
+    # wind, data = API_coordinates()
     wind, data = API_location()
     wind_direction, wind_speed = wind_decision(wind)
     x1, x2, y1, y2 = beach_plot(beach_face_direction)
@@ -95,5 +95,6 @@ def wind_plot(wind_direction, x1, x2, y1, y2, wind_speed):
     plt.plot(x_, y_, 'red') #plot of direction and magnitude of wind
     plt.plot(x_head[0], y_head[0], 'red') #plot of left side of arrow head
     plt.plot(x_head[1], y_head[1], 'red') #plot of right side of arrow head
+    plt.show()
     
 main()
