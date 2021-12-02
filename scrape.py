@@ -1,12 +1,15 @@
+# scraping libraries
 import requests
 from bs4 import BeautifulSoup
 
+# urls for each of the locations
 urls = {'new brighton' : 'https://magicseaweed.com/New-Brighton-Beach-Surf-Report/5212/',
         'yaroomba' : 'https://magicseaweed.com/Yaroomba-Surf-Report/5362/',
         'south straddie' : 'https://magicseaweed.com/South-Stradbroke-Island-Surf-Report/1010/',
         'palm beach' : 'https://magicseaweed.com/Palm-Beach-Surf-Report/6140/',
         'noosa' : 'https://magicseaweed.com/Tea-Tree-Noosa-Surf-Report/544/'}
 
+# return the swell as a string for a given location
 def get_swell(location):
     url = urls[location]
     response = requests.get(url)
@@ -16,6 +19,7 @@ def get_swell(location):
         if li.has_attr( "class" ) and li["class"] == ['rating-text', 'text-dark']:
                 return li.text.strip()
 
+# return wind as a string for a given location
 def get_wind(location):
     url = urls[location]
     response = requests.get(url)
@@ -25,13 +29,17 @@ def get_wind(location):
         if div.has_attr("data-original-title"):
                 return div["data-original-title"].strip()
 
+# conditions class - will eventually have all relevant info on surf conditions
 class Conditions:
     def __init__(self, location):
         self.location = location
         self.swell = get_swell(location)
         self.wind = get_wind(location)
 
+# ask user for location
 location = input("enter location: ")
+
+# print swell and wind data for that location
 if location in urls:
     data = Conditions(location)
     print(f"swell: {data.swell}")
