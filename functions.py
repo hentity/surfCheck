@@ -4,7 +4,7 @@ import csv
 import re
 import sys 
 
-# ------CLASSES------
+# ------CLASSES------ #
 
 # contains information for a surf spot
 class Spot:
@@ -37,7 +37,7 @@ class Conditions:
         self.swell = fetch_swell(spot)
         self.wind = fetch_wind(spot)
 
-# ------FUNCTIONS------
+# ------FUNCTIONS------ #
 
 # return the swell as a string for a given spot
 def fetch_swell(spot):
