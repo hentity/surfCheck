@@ -2,7 +2,6 @@ import requests
 from bs4 import BeautifulSoup
 import csv
 import re
-import sys 
 
 # ------CLASSES------ #
 
@@ -67,7 +66,6 @@ def read_spots():
     spots = {}
     file = open('spots.csv')
     csvreader = csv.reader(file)
-    print(f"\rfetching conditions...")
     for row in csvreader:
         spots[row[0]] = Spot(row[0], row[1], row[2])
     return spots
