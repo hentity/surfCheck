@@ -1,5 +1,5 @@
  - handle case where location is not in locations list
  - add more locations
  - update conditions class
- - fetch swell and wind data as numbers, rather than just strings
+ - fetch swell and wind data as numbers, rather than just strings - DONE
  - make assessment about quality of surf based on conditions
