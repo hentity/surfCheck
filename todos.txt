@@ -3,3 +3,4 @@
  - update conditions class
  - fetch swell and wind data as numbers, rather than just strings - DONE
  - make assessment about quality of surf based on conditions
+ - make progress bar for fetching conditions
